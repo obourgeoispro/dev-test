@@ -2,6 +2,7 @@ package com.example;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import com.google.common.base.Objects;
 
 @JsonPropertyOrder({"id", "name", "type", "latitude", "longitude"})
 public class CityDTO {
@@ -59,5 +60,17 @@ public class CityDTO {
         this.type = type;
         this.latitude = latitude;
         this.longitude = longitude;
+    }
+
+
+    @Override
+    public String toString() {
+        return Objects.toStringHelper(this)
+                .add("id", id)
+                .add("name", name)
+                .add("type", type)
+                .add("latitude", latitude)
+                .add("longitude", longitude)
+                .toString();
     }
 }
